@@ -1,0 +1,71 @@
+:root {
+  --animation-speed: 4.5s;
+}
+
+body {
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.complete {
+  background-color: black;
+}
+
+.status {
+  color: black;
+  font-size: 30px;
+}
+
+.timer {
+  color: white;
+  font-size: 25px;
+}
+
+.container {
+  background-color: white;
+  width: 900px;
+  height: 400px;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .word {
+  position: relative;
+  left: -15%;
+  width: 100%;
+}
+
+.container:has(.startGame) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes move {
+  100% {
+    left: 100%;
+  }
+}
+
+label {
+  color: white;
+}
+
+.container .word.move {
+  animation: var(--animation-speed) move forwards;
+  animation-timing-function: linear;
+}
+
+input[type="text"] {
+  opacity: 0;
+}
